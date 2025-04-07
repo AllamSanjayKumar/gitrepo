@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My E-Commerce Store</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <h1>My E-Commerce Store</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#cart">Cart (<span id="cart-count">0</span>)</a></li>
+                <li><a href="#checkout">Checkout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <h1>Welcome to Our Store</h1>
+        <p>Shop the latest trends at unbeatable prices.</p>
+        <a href="#products"><button>Shop Now</button></a>
+    </section>
+
+    <!-- Products -->
+    <section id="products" class="products">
+        <h2>Our Products</h2>
+        <div class="product-list">
+            <div class="product">
+                <img src="images/Headphones.jpg" alt="Headphones">
+                <h3>Headphones</h3>
+                <p>$25.00</p>
+                <button onclick="addToCart('Headphones', 25)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="images/Gopro.jpg" alt="Gopro Camera">
+                <h3>Gopro Camera</h3>
+                <p>$40.00</p>
+                <button onclick="addToCart('Gopro Camera', 40)">Add to Cart</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cart -->
+    <section id="cart" class="cart">
+        <h2>Shopping Cart</h2>
+        <div id="cart-items">
+            <p>No items in cart.</p>
+        </div>
+        <p><strong>Total:</strong> $<span id="cart-total">0.00</span></p>
+        <button onclick="clearCart()">Clear Cart</button>
+    </section>
+
+    <!-- Checkout -->
+    <section id="checkout" class="checkout">
+        <h2>Billing Information</h2>
+        <form onsubmit="return placeOrder(event)">
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" required>
+
+            <label for="address">Address:</label>
+            <input type="text" id="address" required>
+
+            <label for="card">Credit Card Number:</label>
+            <input type="text" id="card" required>
+
+            <button type="submit">Place Order</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 My E-Commerce Store | All Rights Reserved</p>
+        <div class="social-icons">
+            <a href="#"><img src="images/facebook-icon.png" alt="Facebook"></a>
+            <a href="#"><img src="images/instagram-icon.png" alt="Instagram"></a>
+            <a href="#"><img src="images/twitter-icon.png" alt="Twitter"></a>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
